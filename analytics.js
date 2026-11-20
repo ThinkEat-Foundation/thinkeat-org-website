@@ -91,6 +91,8 @@
     if (choice === "allowed") {
       startAnalytics();
     } else if (analyticsStarted) {
+      // Stop recording local events immediately while the page is reloading.
+      analyticsStarted = false;
       // A full reload ensures the loaded GA tag stops executing after withdrawal.
       window.gtag("consent", "update", { analytics_storage: "denied" });
       clearAnalyticsCookies();

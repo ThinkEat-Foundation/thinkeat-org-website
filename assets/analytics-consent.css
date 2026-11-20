@@ -1,0 +1,68 @@
+/* Consent banner shown only until a visitor makes an analytics choice. */
+.te-consent {
+  position: fixed;
+  z-index: 9999;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  box-sizing: border-box;
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  background: #fff;
+  border: 1px solid #ceddd0;
+  border-radius: 16px;
+  box-shadow: 0 12px 44px rgba(20, 44, 30, .20);
+  color: #203128;
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.te-consent__content { flex: 1 1 500px; min-width: 0; }
+.te-consent__content strong { font-weight: 750; }
+.te-consent__content p { margin: 5px 0 0; font-size: 14px; line-height: 1.5; color: #45564b; }
+.te-consent a { color: #20583c; text-decoration: underline; }
+.te-consent__actions { display: flex; gap: 8px; align-items: center; flex: 0 0 auto; }
+.te-consent__actions button {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid #b8cbbb;
+  font: inherit;
+  font-weight: 700;
+}
+.te-consent__decline { background: #fff; color: #203128; }
+.te-consent__allow { background: #2f7650; color: #fff; border-color: #2f7650 !important; }
+.te-consent__actions button:focus-visible, .te-consent-preferences:focus-visible {
+  outline: 3px solid #a67112;
+  outline-offset: 3px;
+}
+.te-consent-preferences {
+  display: block;
+  margin: 8px auto;
+  padding: 6px 10px;
+  border: 0;
+  background: none;
+  color: #225e40;
+  text-decoration: underline;
+  font: inherit;
+  font-size: .88rem;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .te-consent {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: calc(100% - 24px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+    padding: 15px;
+  }
+  .te-consent__content { flex: 0 1 auto; }
+  .te-consent__actions { justify-content: flex-end; flex-wrap: wrap; }
+}

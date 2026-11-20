@@ -168,7 +168,15 @@
       section{padding:70px 0}
     }
     @media(max-width:700px){.nav{align-items:flex-start;flex-direction:column;gap:13px;padding:16px 0}}
-  </style>
+  
+    /* QR code is visible in the homepage app section as well as app.html. */
+    .home-app-qr{display:flex;align-items:center;gap:18px;margin-top:20px;padding:16px;border:1px solid var(--line);background:var(--green-soft);border-radius:18px;max-width:510px}
+    .home-app-qr a{display:block;flex:0 0 176px;line-height:0}
+    .home-app-qr img{display:block;width:176px;height:176px;max-width:100%;background:white;border-radius:8px}
+    .home-app-qr strong{display:block;color:var(--ink)}
+    .home-app-qr p{margin:6px 0 0;color:var(--muted);font-size:.94rem;line-height:1.5}
+    @media(max-width:460px){.home-app-qr{flex-direction:column;align-items:flex-start}.home-app-qr a{flex:0 0 auto}}
+</style>
   <script src="analytics-config.js" defer></script>
   <script src="analytics.js" defer></script>
 </head>
@@ -282,7 +290,14 @@
               <li>Record whether food was consumed, donated, or thrown away.</li>
               <li>Build awareness of personal food-use habits over time.</li>
             </ul>
-            <a class="button primary" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank">View ThinkEat on the App Store</a><p><a href="app.html">Learn how ThinkEat works</a></p>
+            <a class="button primary" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank">View ThinkEat on the App Store</a>
+            <div class="home-app-qr">
+              <a href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank" aria-label="Open ThinkEat on the Apple App Store">
+                <img src="assets/thinkeat-ios-app-store-qr.svg" width="176" height="176" alt="Scan this QR code to open ThinkEat on the Apple App Store" loading="lazy">
+              </a>
+              <div><strong>Scan to download</strong><p>Open your iPhone camera and scan this code to view ThinkEat in the App Store.</p></div>
+            </div>
+            <p><a href="app.html">Learn how ThinkEat works</a></p>
           </div>
         </div>
       </div>

@@ -169,14 +169,8 @@
     }
     @media(max-width:700px){.nav{align-items:flex-start;flex-direction:column;gap:13px;padding:16px 0}}
   
-    /* QR code is visible in the homepage app section as well as app.html. */
-    .home-app-qr{display:flex;align-items:center;gap:18px;margin-top:20px;padding:16px;border:1px solid var(--line);background:var(--green-soft);border-radius:18px;max-width:510px}
-    .home-app-qr a{display:block;flex:0 0 176px;line-height:0}
-    .home-app-qr img{display:block;width:176px;height:176px;max-width:100%;background:white;border-radius:8px}
-    .home-app-qr strong{display:block;color:var(--ink)}
-    .home-app-qr p{margin:6px 0 0;color:var(--muted);font-size:.94rem;line-height:1.5}
-    @media(max-width:460px){.home-app-qr{flex-direction:column;align-items:flex-start}.home-app-qr a{flex:0 0 auto}}
-</style>
+    </style>
+  <link rel="stylesheet" href="assets/platform-downloads.css" />
   <script src="analytics-config.js" defer></script>
   <script src="analytics.js" defer></script>
 </head>
@@ -290,13 +284,26 @@
               <li>Record whether food was consumed, donated, or thrown away.</li>
               <li>Build awareness of personal food-use habits over time.</li>
             </ul>
-            <a class="button primary" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank">View ThinkEat on the App Store (iPhone / iOS)</a>
-            <div class="home-app-qr">
-              <a href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank" aria-label="Open ThinkEat for iPhone / iOS on the Apple App Store">
-                <img src="assets/thinkeat-ios-app-store-qr.svg" width="176" height="176" alt="iPhone / iOS QR code for ThinkEat on the Apple App Store" loading="lazy">
-              </a>
-              <div><strong>For iPhone / iOS only</strong><p>Scan this QR code with your iPhone camera to open ThinkEat in the Apple App Store. Android / Google Play availability is still pending.</p></div>
-            </div>
+    <div class="platform-downloads" aria-label="ThinkEat app download options">
+      <div class="platform-card platform-card--ios">
+        <h3 class="platform-card__heading">iPhone / iOS</h3>
+        <span class="platform-card__status">Available on the App Store</span>
+        <a class="platform-card__button" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank">Download for iOS</a>
+        <a class="platform-card__qr-link" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank" aria-label="Open ThinkEat for iPhone in the Apple App Store">
+          <img class="platform-card__qr" src="assets/thinkeat-ios-app-store-qr.svg" width="176" height="176" loading="lazy" alt="iOS QR code linking directly to ThinkEat on the Apple App Store">
+        </a>
+        <p class="platform-card__description">Scan with your iPhone camera to open the App Store listing.</p>
+      </div>
+      <div class="platform-card platform-card--soon">
+        <h3 class="platform-card__heading">Android</h3>
+        <span class="platform-card__status">Coming soon</span>
+        <button class="platform-card__button platform-card__button--disabled" type="button" disabled>Download for Android — Coming soon</button>
+        <a class="platform-card__qr-link" href="https://www.thinkeat.org/app.html#android" aria-label="Android coming soon: scan to view Android availability on the ThinkEat website, not Google Play">
+          <img class="platform-card__qr" src="assets/thinkeat-android-coming-soon-qr.svg" width="176" height="176" loading="lazy" alt="Android coming-soon QR code linking to ThinkEat's website, not to Google Play">
+        </a>
+        <p class="platform-card__description"><strong>Google Play release pending.</strong> Scan for availability updates. This QR opens ThinkEat.org, not a download.</p>
+      </div>
+    </div>
             <p><a href="app.html">Learn how ThinkEat works</a></p>
           </div>
         </div>

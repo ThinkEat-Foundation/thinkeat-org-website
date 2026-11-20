@@ -153,7 +153,7 @@
     }
   }
 
-  // A link click measures outbound interest, not a confirmed iOS install.
+  // Store link clicks measure outbound interest, not confirmed app installations.
   document.addEventListener("click", function (event) {
     if (!analyticsStarted) return;
     var anchor = event.target && event.target.closest
@@ -167,12 +167,18 @@
     } catch (error) {
       return;
     }
-    if (destination.hostname !== "apps.apple.com" ||
-        destination.pathname !== "/us/app/thinkeat/id6796200052") {
-      return;
+    var eventName = null;
+    if (destination.hostname === "apps.apple.com" &&
+        destination.pathname === "/us/app/thinkeat/id6796200052") {
+      eventName = "ios_app_store_click";
+    } else if (destination.hostname === "play.google.com" &&
+        destination.pathname === "/store/apps/details" &&
+        destination.searchParams.get("id") === "com.thinkeat.ai") {
+      eventName = "android_play_store_click";
     }
+    if (!eventName) return;
 
-    window.gtag("event", "ios_app_store_click", {
+    window.gtag("event", eventName, {
       link_url: destination.href,
       transport_type: "beacon"
     });

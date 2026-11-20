@@ -15,14 +15,7 @@
   .app-page { padding-top: 30px; padding-bottom: 64px; }
   .app-hero { max-width: 820px; padding: 32px 0 40px; }
   .app-hero .lede { max-width: 740px; }
-  .app-store-qr { display:flex;align-items:center;gap:22px;margin-top:28px;padding:18px 20px;border:1px solid #dfe6df;border-radius:20px;background:#fff;max-width:530px; }
-  .app-store-qr a { display:block;flex:0 0 176px;line-height:0; }
-  .app-store-qr img { display:block;width:176px;height:176px;max-width:100%;background:#fff;border-radius:8px; }
-  .app-store-qr p { margin:0;color:#526057; }
-  .app-store-qr strong { display:block;color:#203128;margin-bottom:6px; }
-  @media(max-width:440px){ .app-store-qr{flex-direction:column;align-items:flex-start;gap:14px;} .app-store-qr a { flex:0 0 auto; } }
-
-  .app-actions { display:flex;flex-wrap:wrap;gap:12px;margin-top:24px; }
+    .app-actions { display:flex;flex-wrap:wrap;gap:12px;margin-top:24px; }
   .app-button { display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 23px;border-radius:999px;background:#2f7650;color:#fff;font-weight:700;text-decoration:none; }
   .app-button:hover, .app-button:focus-visible { background:#1f5538; }
   .app-button.secondary { background:#e6f2e9;color:#1f5538; }
@@ -40,6 +33,7 @@
   @media(max-width:650px){.app-features{grid-template-columns:1fr;}.app-page{padding-top:8px;}.app-hero{padding:20px 0;}.app-final{padding:22px;}}
 
 </style>
+  <link rel="stylesheet" href="assets/platform-downloads.css" />
   <script src="analytics-config.js" defer></script>
   <script src="analytics.js" defer></script>
 </head>
@@ -53,16 +47,27 @@
     <span class="eyebrow">Meet the ThinkEat app</span>
     <h1>Make the most of the food you already have.</h1>
     <p class="lede">A practical mobile app for organizing groceries, noticing what needs attention, finding meal ideas, and making more mindful choices about food.</p>
-    <div class="app-actions">
-      <a class="app-button" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank">Download on the App Store (iPhone / iOS)</a>
-      <a class="app-button secondary" href="about.html">Learn about our mission</a>
+    <div id="download-options" class="platform-downloads" aria-label="ThinkEat app download options">
+      <div class="platform-card platform-card--ios">
+        <h3 class="platform-card__heading">iPhone / iOS</h3>
+        <span class="platform-card__status">Available on the App Store</span>
+        <a class="platform-card__button" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank">Download for iOS</a>
+        <a class="platform-card__qr-link" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank" aria-label="Open ThinkEat for iPhone in the Apple App Store">
+          <img class="platform-card__qr" src="assets/thinkeat-ios-app-store-qr.svg" width="176" height="176" loading="lazy" alt="iOS QR code linking directly to ThinkEat on the Apple App Store">
+        </a>
+        <p class="platform-card__description">Scan with your iPhone camera to open the App Store listing.</p>
+      </div>
+      <div id="android" class="platform-card platform-card--soon">
+        <h3 class="platform-card__heading">Android</h3>
+        <span class="platform-card__status">Coming soon</span>
+        <button class="platform-card__button platform-card__button--disabled" type="button" disabled>Download for Android — Coming soon</button>
+        <a class="platform-card__qr-link" href="https://www.thinkeat.org/app.html#android" aria-label="Android coming soon: scan to view Android availability on the ThinkEat website, not Google Play">
+          <img class="platform-card__qr" src="assets/thinkeat-android-coming-soon-qr.svg" width="176" height="176" loading="lazy" alt="Android coming-soon QR code linking to ThinkEat's website, not to Google Play">
+        </a>
+        <p class="platform-card__description"><strong>Google Play release pending.</strong> Scan for availability updates. This QR opens ThinkEat.org, not a download.</p>
+      </div>
     </div>
-    <div class="app-store-qr" aria-label="Scan iPhone / iOS ThinkEat App Store QR code">
-      <a href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank" aria-label="Open ThinkEat for iPhone / iOS on the Apple App Store">
-        <img src="assets/thinkeat-ios-app-store-qr.svg" width="176" height="176" alt="iPhone / iOS QR code for ThinkEat on the Apple App Store" />
-      </a>
-      <p><strong>For iPhone / iOS only</strong> Scan this QR code with your iPhone camera to open ThinkEat in the Apple App Store. Android / Google Play availability is still pending.</p>
-    </div>
+    <p><a href="about.html">Learn about our mission</a></p>
   </div>
 
   <section aria-labelledby="how-heading">
@@ -96,8 +101,8 @@
   <section class="app-final" aria-labelledby="start-heading">
     <h2 id="start-heading">Start with what is in your kitchen</h2>
     <p>Organize your groceries, pay attention to what should be used soon, and find practical ways to make the most of what you already have.</p>
-    <a class="app-button" href="https://apps.apple.com/us/app/thinkeat/id6796200052" rel="noopener noreferrer" target="_blank">Download ThinkEat on the App Store (iPhone / iOS)</a>
-    <p class="fine-print">Android availability will be linked here after the public Google Play listing is ready. ThinkEat does not replace professional food-safety advice.</p>
+    <a class="app-button" href="#download-options">See iOS and Android download options</a>
+    <p class="fine-print">Android downloads are coming soon. The Android QR code currently opens this page for availability updates. ThinkEat does not replace professional food-safety advice.</p>
   </section>
 </main>
   <footer><div style="text-align:center;padding:20px;line-height:1.6;">

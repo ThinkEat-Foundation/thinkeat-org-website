@@ -1,0 +1,95 @@
+/* Shared iOS / Android download cards on index.html and app.html. */
+.platform-downloads {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  margin: 24px 0;
+}
+.platform-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 19px 15px 20px;
+  border: 1px solid #dfe6df;
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 6px 22px rgba(36,70,49,.04);
+}
+.platform-card--soon {
+  background: #f7f8f5;
+  border-style: dashed;
+}
+.platform-card__heading {
+  margin: 0;
+  color: #203128;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+.platform-card__status {
+  display: inline-block;
+  color: #1f5538;
+  background: #e6f2e9;
+  font-size: .8rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 3px 10px;
+  line-height: 1.5;
+}
+.platform-card--soon .platform-card__status { color: #65572f; background: #f4ead3; }
+.platform-card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #2f7650;
+  color: #fff;
+  font-size: .95rem;
+  line-height: 1.3;
+  font-weight: 750;
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  font-family: inherit;
+}
+.platform-card__button:not(:disabled):hover, .platform-card__button:not(:disabled):focus-visible { background: #1f5538; }
+.platform-card__button--disabled {
+  color: #59685e;
+  background: #e4e9e4;
+  cursor: not-allowed;
+}
+.platform-card__qr-link {
+  display: block;
+  width: min(176px, 100%);
+  line-height: 0;
+  border-radius: 9px;
+}
+.platform-card__qr-link:focus-visible { outline: 3px solid #2f7650; outline-offset: 3px; }
+.platform-card__qr {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  background: #fff;
+  border: 6px solid #fff;
+  border-radius: 9px;
+}
+.platform-card__description {
+  margin: 0;
+  max-width: 32ch;
+  color: #526057;
+  font-size: .91rem;
+  line-height: 1.45;
+}
+.platform-card__description strong { color: #203128; }
+@media (max-width: 620px) {
+  .platform-downloads { grid-template-columns: 1fr; }
+  .platform-card { padding: 18px; }
+  .platform-card__button { max-width: 290px; }
+}

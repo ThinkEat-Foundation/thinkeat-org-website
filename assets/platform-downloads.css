@@ -55,6 +55,8 @@
   font-weight: 750;
   text-decoration: none;
   text-align: center;
+  border: 0;
+  font-family: inherit;
 }
 .platform-card__button:hover, .platform-card__button:focus-visible { background: #1f5538; }
 .platform-card__button--disabled {

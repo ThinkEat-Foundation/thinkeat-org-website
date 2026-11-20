@@ -19,10 +19,6 @@
   text-align: center;
   box-shadow: 0 6px 22px rgba(36,70,49,.04);
 }
-.platform-card--soon {
-  background: #f7f8f5;
-  border-style: dashed;
-}
 .platform-card__heading {
   margin: 0;
   color: #203128;
@@ -39,7 +35,6 @@
   padding: 3px 10px;
   line-height: 1.5;
 }
-.platform-card--soon .platform-card__status { color: #65572f; background: #f4ead3; }
 .platform-card__button {
   display: flex;
   align-items: center;
@@ -59,11 +54,6 @@
   font-family: inherit;
 }
 .platform-card__button:not(:disabled):hover, .platform-card__button:not(:disabled):focus-visible { background: #1f5538; }
-.platform-card__button--disabled {
-  color: #59685e;
-  background: #e4e9e4;
-  cursor: not-allowed;
-}
 .platform-card__qr-link {
   display: block;
   width: min(176px, 100%);

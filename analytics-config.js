@@ -4,6 +4,6 @@
  * Do not paste credentials or private API keys here.
  */
 window.THINKEAT_ANALYTICS = {
-  measurementId: "",
-  enabled: false
+  measurementId: "G-87F9GWFM7L",
+  enabled: true
 };
